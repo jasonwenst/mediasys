@@ -7,8 +7,9 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.spring.jpa.user.User;
-import com.spring.jpa.user.UserService;
+import com.spring.entity.User;
+import com.spring.service.UserService;
+
 
 
 @RunWith(SpringJUnit4ClassRunner.class)

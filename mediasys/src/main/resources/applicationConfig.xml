@@ -31,7 +31,7 @@
     
     <!-- 定义实体管理器工厂
          Jpa配置   LocalContainerEntityManagerFactoryBean这个选项Spring扮演了容器的角色。完全掌管JPA -->
-          点我查看 spring生成EntityManagerFactory的三种方式 
+          
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
            <!-- 指定数据源 -->
         <property name="dataSource" ref="dataSource"/>

@@ -16,7 +16,7 @@
 
 	<!-- 如果spring用了jpa，并且类型为LocalContainerEntityManagerFactoryBean，则组件注册在此配置文件出现即可，其余配置文件可忽略 
 		使用component来替代annotation 自动注册bean, 并保证@Required、@Autowired的属性被注入\ -->
-	<context:component-scan base-package="com.spring.jpa" />
+	<context:component-scan base-package="com.spring.entity,com.spring.dao,com.spring.service" />
 
 	<!-- spring启动时扫描项目路径下的properties文件,后续用${key }方式取出对应值,这样可以代码解耦和，后续只需修改properties文件即可 -->
 	<bean id="propertyPlaceholderConfigurer"
@@ -40,7 +40,7 @@
 		<!-- 指定Entity实体类包路径 -->
 		<property name="packagesToScan">
 			<array>
-				<value>com.spring.jpa</value>
+				<value>com.spring.entity</value>
 			</array>
 		</property>
 		<!-- 指定JPA属性；如Hibernate中指定是否显示SQL的是否显示、方言等 -->
@@ -51,13 +51,13 @@
 				<prop key="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.format_sql">true</prop>
-				<prop key="hibernate.hbm2ddl.auto">validate</prop>
+<!-- 				<prop key="hibernate.hbm2ddl.auto">validate</prop> -->
 			</props>
 		</property>
 	</bean>
 
 	<!-- 重要配置：启用扫描并自动创建代理的功能 -->
-	<jpa:repositories base-package="com.spring.jpa"
+	<jpa:repositories base-package="com.spring.entity,com.spring.dao,com.spring.service"
 		transaction-manager-ref="transactionManager"
 		entity-manager-factory-ref="entityManagerFactory" />
 

@@ -6,15 +6,9 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-            classpath:applicationConfig.xml
+            classpath:applicationConfig.xml,log4j.properties
 		</param-value>
 	</context-param>
-  
-  
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-  
   
   
 	<servlet>
@@ -28,8 +22,12 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springServlet</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
+  
+  	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
   
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>

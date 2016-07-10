@@ -1,8 +1,11 @@
-package com.spring.jpa.user;
+package com.spring.service;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+
+import com.spring.dao.IUserDao;
+import com.spring.entity.User;
 
 @Service
 public class UserService {
@@ -11,7 +14,7 @@ public class UserService {
 	private IUserDao userDao;
 	
 	public User getUserByUsername(String username) {
-		return userDao.findUserByUsername(username);
+		return userDao.findUserByUserName(username);
 	}
 	
 	
